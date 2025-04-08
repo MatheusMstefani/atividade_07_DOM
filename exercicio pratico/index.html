@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .alter {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin: auto;
+            color: black;
+            position: fixed;
+            top: 20px;  
+            right: 20px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+         .cor  {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin: auto;
+            color: black;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button img {
+            width: 30px;  
+            height: 30px;
+            border-radius: 50%; 
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            
+            flex-direction: column;
+            gap: 20px;
+        }
+        .card {
+            background-color: white;
+            padding : 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: auto;
+            margin-block: 30px;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            margin-block: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            padding-block: 10px;
+        }
+        .counter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .counter button {
+            background-color: #FF6347;
+            padding: 5px 10px;
+            font-size: 20px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .counter p {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .form-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-card button {
+            background-color: #1E90FF;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-card button:hover {
+            background-color: #4682B4;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <button class="cor" onclick="mudarCorFundo()">
+        <img src="lampada.jpg" alt="Ícone">
+    </button>
+
+    <div class="card">
+        <input type="text" id="entradaTexto" placeholder="Digite algo...">
+        <button id="text" onclick="mostrarTexto()">Exibir Texto</button>
+        <p id="textoExibido"></p>
+    </div>
+    <div class="card">
+        <div class="counter">
+            <button id="alter" onclick="alterarContador(-1)">-</button>
+            <p id="contador">0</p>
+            <button onclick="alterarContador(1)">+</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <input type="text" id="corInput" placeholder="Digite uma cor e pressione Enter" onkeypress="mudarCorComEnter(event)">
+    </div>
+
+    <div class="card form-card">
+        <h3>Formulario de Contato</h3>
+        <input type="text" id="nome" placeholder="Seu nome" required>
+        <input type="email" id="email" placeholder="Seu e-mail" required>
+        <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
+        <button id="enviarfor" onclick="enviarFormulario()">Enviar</button>
+        <p id="dadosFormulario"></p>
+    </div>
+
+    <script src="pratico.js"></script>
+</body>
+</html>
